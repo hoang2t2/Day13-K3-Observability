@@ -1,0 +1,113 @@
+INFO:     Loading environment from '.env'
+INFO:     Started server process [9692]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Transient error HTTPSConnectionPool(host='cloud.langfuse.com', port=443): Max retries exceeded with url: /api/public/otel/v1/traces (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPSConnection(host='127.0.0.1', port=9): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) encountered while exporting span batch, retrying in 0.86s.
+Failed to export span batch due to timeout, max retries or shutdown.
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Transient error HTTPSConnectionPool(host='cloud.langfuse.com', port=443): Max retries exceeded with url: /api/public/otel/v1/traces (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPSConnection(host='127.0.0.1', port=9): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) encountered while exporting span batch, retrying in 0.93s.
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Exception while exporting Span.
+Traceback (most recent call last):
+  File "C:\Users\FPT SHOP\Downloads\ai-in-action\Day13-K3-Observability\.venv\Lib\site-packages\opentelemetry\sdk\_shared_internal\__init__.py", line 182, in _export
+    self._exporter.export(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        [
+        ^
+    ...<3 lines>...
+        ]
+        ^
+    )
+    ^
+  File "C:\Users\FPT SHOP\Downloads\ai-in-action\Day13-K3-Observability\.venv\Lib\site-packages\opentelemetry\exporter\otlp\proto\http\trace_exporter\__init__.py", line 202, in export
+    resp = self._export(serialized_data, deadline_sec - time())
+  File "C:\Users\FPT SHOP\Downloads\ai-in-action\Day13-K3-Observability\.venv\Lib\site-packages\opentelemetry\exporter\otlp\proto\http\trace_exporter\__init__.py", line 172, in _export
+    resp = self._session.post(
+        url=self._endpoint,
+    ...<3 lines>...
+        cert=self._client_cert,
+    )
+  File "C:\Users\FPT SHOP\Downloads\ai-in-action\Day13-K3-Observability\.venv\Lib\site-packages\requests\sessions.py", line 712, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FPT SHOP\Downloads\ai-in-action\Day13-K3-Observability\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\FPT SHOP\Downloads\ai-in-action\Day13-K3-Observability\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\FPT SHOP\Downloads\ai-in-action\Day13-K3-Observability\.venv\Lib\site-packages\requests\adapters.py", line 693, in send
+    resolved_timeout = TimeoutSauce(connect=timeout, read=timeout)
+  File "C:\Users\FPT SHOP\Downloads\ai-in-action\Day13-K3-Observability\.venv\Lib\site-packages\urllib3\util\timeout.py", line 115, in __init__
+    self._connect = self._validate_timeout(connect, "connect")
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FPT SHOP\Downloads\ai-in-action\Day13-K3-Observability\.venv\Lib\site-packages\urllib3\util\timeout.py", line 159, in _validate_timeout
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: Attempted to set connect timeout to -0.010490655899047852, but the timeout cannot be set to a value less than or equal to 0.
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Failed to export span batch due to timeout, max retries or shutdown.
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Failed to export span batch due to timeout, max retries or shutdown.
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Failed to export span batch due to timeout, max retries or shutdown.
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Failed to export span batch due to timeout, max retries or shutdown.
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Failed to export span batch due to timeout, max retries or shutdown.
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Failed to export span batch due to timeout, max retries or shutdown.
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Error while fetching prompt 'day13-chat-label:production': timed out
+Returning fallback prompt for 'day13-chat-label:production' due to fetch error: timed out
+Transient error HTTPSConnectionPool(host='cloud.langfuse.com', port=443): Max retries exceeded with url: /api/public/otel/v1/traces (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPSConnection(host='127.0.0.1', port=9): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) encountered while exporting span batch, retrying in 0.87s.
+Failed to export span batch due to timeout, max retries or shutdown.
