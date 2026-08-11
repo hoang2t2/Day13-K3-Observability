@@ -49,10 +49,10 @@
 
 - Challenge ID: `day13-k3-observability-v1`
 - Triệu chứng từ metrics: P95 Latency tăng vọt lên ~2653ms cho các query thuộc feature `refund` (vượt ngưỡng `latency_threshold_ms` 2000ms trong [challenge.json](../config/challenge.json)). Xem bằng chứng tại [cp3_evidence.md](evidence/cp3_evidence.md).
-- Trace ID liên quan: Sessions `k3-challenge-s01` tới `k3-challenge-s05` (các correlation IDs: `req-606b5f17`, `req-09a1f9bd`, `req-f8fc1406`, `req-ce0356a0`, `req-d9ecc2ff`).
+- Trace ID liên quan: Sessions `k3-challenge-s01` tới `k3-challenge-s05` (các correlation IDs: `req-3c4d1465`, `req-2ca32f3d`, `req-88fd2aba`, `req-c977c1ca`, `req-975740d6`).
 - Log line/correlation ID liên quan:
-  - Control incident log: `{"service": "control", "payload": {"name": "rag_slow"}, "event": "incident_enabled", "correlation_id": "req-d49dbe6b", "level": "warning", "ts": "2026-08-11T05:33:05.983925Z"}`
-  - API response log: `{"service": "api", "latency_ms": 2653, "tokens_in": 34, "tokens_out": 151, "cost_usd": 0.002367, "quality_score": 0.8, "payload": {"answer_preview": "..."}, "event": "response_sent", "user_id_hash": "5da42a0d3d01", "correlation_id": "req-606b5f17", "session_id": "k3-challenge-s05", "model": "claude-sonnet-4-5", "env": "dev", "feature": "refund", "level": "info", "ts": "2026-08-11T05:33:16.940079Z"}`
+  - Control incident log: `{"service": "control", "payload": {"name": "rag_slow"}, "event": "incident_enabled", "correlation_id": "req-72b010b5", "level": "warning", "ts": "2026-08-11T04:52:15.725660Z"}`
+  - API response log: `{"service": "api", "latency_ms": 3560, "tokens_in": 31, "tokens_out": 91, "cost_usd": 0.001458, "quality_score": 0.9, "payload": {"answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."}, "event": "response_sent", "correlation_id": "req-2ca32f3d", "feature": "refund", "env": "dev", "session_id": "k3-challenge-s02", "user_id_hash": "867738e76862", "model": "claude-sonnet-4-5", "level": "info", "ts": "2026-08-11T04:52:27.144123Z"}`
 - Root cause: Incident `rag_slow` bị bật trong `STATE`, kích hoạt `time.sleep(2.5)` tại hàm `retrieve()` trong `app/mock_rag.py`.
 - Fix action: Tắt incident `rag_slow` bằng cách chạy `python scripts/inject_incident.py --disable` (gửi POST request đến `/incidents/rag_slow/disable`).
 - Preventive measure:
@@ -67,5 +67,5 @@ Với mỗi thành viên, ghi rõ nhiệm vụ và link commit/PR tương ứng.
 | Thành viên | Phần việc | Commit/PR | Điều đã học |
 |---|---|---|---|
 | Đoàn Vũ Hoàng | Middleware, gán Correlation ID, Enrichment logs & PII Redaction | [`f732ae4`](https://github.com/hoang2t2/Day13-K3-Observability/commit/f732ae4) | Hiểu rõ cách trích xuất, lan truyền correlation ID xuyên suốt request lifecycle và che chắn dữ liệu nhạy cảm PII trong log. |
-| Sùng A Khua | Cấu hình Langfuse, thiết lập SLO/Alert Rules, viết tài liệu Alert Runbook | [`495ad43`](https://github.com/hoang2t2/Day13-K3-Observability/commit/495ad43), [`69c73d0`](https://github.com/hoang2t2/Day13-K3-Observability/commit/69c73d0) | Thành thạo cách kết nối tracing từ Langfuse, định nghĩa SLO/SLI phù hợp với symptom-based alerting và xây dựng runbook. |
-| Đàm Vinh Quang | Thiết kế Dashboard Spec, thực hiện load test, quản lý Challenge/Practice Incident (CP3) và tổng hợp báo cáo nhóm | [`cd84f4f`](https://github.com/hoang2t2/Day13-K3-Observability/commit/cd84f4f) | Hiểu cách trực quan hóa 6 nhóm chỉ số trên Dashboard contract, thực thi load test để phát hiện anomaly và quy trình triage incident bằng Traces & Logs. |
+| Sùng A Khua | Cấu hình Langfuse, thiết lập SLO/Alert Rules, viết tài liệu Alert Runbook, thiết kế Dashboard Spec | [`495ad43`](https://github.com/hoang2t2/Day13-K3-Observability/commit/495ad43), [`69c73d0`](https://github.com/hoang2t2/Day13-K3-Observability/commit/69c73d0) | Thành thạo cách kết nối tracing từ Langfuse, định nghĩa SLO/SLI phù hợp với symptom-based alerting và xây dựng runbook, Hiểu cách trực quan hóa 6 nhóm chỉ số trên Dashboard contract. |
+| Đàm Vinh Quang | Thực hiện load test, quản lý Challenge/Practice Incident (CP3) và tổng hợp báo cáo nhóm | [`c6fe0a5`](https://github.com/hoang2t2/Day13-K3-Observability/commit/c6fe0a5) | Thực thi load test để phát hiện anomaly và quy trình triage incident bằng Traces & Logs. |
